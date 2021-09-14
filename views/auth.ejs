@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="contain">
+        <h1>Non-L3+</h1>
+        <section>
+            <i class="fas fa-unlock-alt"></i>
+        </section>
+    </div>
+    <div class="card">
+        <a href="/" id="back">⨉</a>
+        <div class="sec">
+            <h2>Authentication for your new account</h2>
+            <p>Please enter your ticket number and phone number below</p>
+        </div>
+        <form action="/auth" method="POST" id="form">
+            <table class="center">
+                <tr>
+                    <td>
+                        <input type="text" id="t_no" name="ticket" value="<%= t %>" placeholder="Ticket No."><br>
+                        <p id="t_error"></p>
+                    </td>
+                    <td>
+                        <i class="fas fa-check" id="t_check"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" id="tel_code" placeholder="+91" disabled><input type="text" id="phone" name="phone_no" value="<%= m %>" placeholder="Phone No.">
+                    </td>
+                    <td>
+                        <button id="otp" disabled>Send code</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><p id="m_error"></p></td>
+                </tr>
+            </table>
+        <!-- </form> -->
+        <div class="check">
+        <% if(otp_check === 'otp') { %>
+            <div class="sec">
+                <h2>Enter your code</h2>
+                <p>To continue, please enter the verification code we've just send you.</p>
+            </div>
+            <div class="send_otp">
+                <!-- <form> -->
+                    <input type="text" name="OTP" id="code" placeholder="Enter OTP">
+                    <!-- <input type="submit" id="code_sub" value="Submit"> -->
+                    <button>Submit</button>
+            </div>
+        <% } if(otp_check ==='error') { %>
+            <span>Data not Found</span>
+        <% } %>
+        </div>
+        </form>
+    </div>
+    <script src="js/validation.js"></script>
+</body>
+</html>
