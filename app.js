@@ -1,5 +1,5 @@
 // demo file from drive :E
-const messagebird = require('messagebird')('onNkFeVBjTAbvEkL6iQ3FZjdR');
+const messagebird = require('messagebird')('TokenID');
 const path = require('path');
 const express = require("express");
 const db = require(__dirname + '\\src\\db.js');
