@@ -1,4 +1,3 @@
-// demo file from drive :E
 const messagebird = require('messagebird')('TokenID');
 const path = require('path');
 const express = require("express");
